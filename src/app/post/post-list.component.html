@@ -1,0 +1,24 @@
+<div class="card mt-3 mb-3" *ngFor="let post of posts">
+  <div class="card-body">
+
+    <app-post-header [ownerId]="post.owner._id" [nickname]="post.owner.nickname" [text]="post.text" (hashtagClick)="onHashtagClick($event)"></app-post-header>
+
+    <a data-toggle="collapse" href="javascript:void(0)" class="btn btn-outline-success" (click)="showComments(post)" [attr.aria-expanded]="post._id === postExpanded"
+      aria-controls="post._id">Comments</a>
+
+    <app-edit-modal *ngIf="user._id === post.owner._id" [text]="post.text" btnClass="btn-outline-success" (done)="editPost(post, $event)"></app-edit-modal>
+
+    <div class="mt-2" [id]="post._id" [ngbCollapse]="post._id !== postExpanded">
+
+      <app-comment-list *ngIf="post.comments.length > 0" [comments]="post.comments"></app-comment-list>
+
+      <div id="{{'post_'+post._id+'_comments'}}" class="input-group mt-2">
+        <textarea name="comment" [(ngModel)]="commentText" class="form-control"></textarea>
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" type="button" (click)="onCommentClick(post)">Comment</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

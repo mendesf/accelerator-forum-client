@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <h4 class="modal-title">Editing...</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <textarea name="text" [(ngModel)]="text" class="form-control"></textarea>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-success" (click)="activeModal.close(text)">Done</button>
+</div>

@@ -1,0 +1,9 @@
+<h5 class="card-title">
+  <a href="javascript:void(0)" [routerLink]="['/users', ownerId]">@{{nickname}}</a>
+</h5>
+<h6 class="card-subtitle mb-2 text-muted">
+  {{text}}
+</h6>
+<p *ngIf="hashtags.length > 0" class="card-text">
+  <app-hashtag-link *ngFor="let hashtag of hashtags" [hashtag]="hashtag" (click)="onClick(hashtag)"></app-hashtag-link>
+</p>

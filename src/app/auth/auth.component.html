@@ -1,0 +1,52 @@
+<div class="container-fluid h-100">
+  <div class="row h-100 align-items-center text-center">
+    <form class="form-auth" (submit)="onSubmit($event)">
+    
+      <p>
+        <ngb-alert *ngIf="message" type="danger" (close)="message = undefined">
+          {{message}}
+        </ngb-alert>
+      </p>
+
+      <h2 class="mb-4 font-weight-bold">Accelerator Forum</h2>
+      <h3 class="mb-3 font-weight-normal">Please {{isSignInActive ? 'sign in' : 'sign up'}}</h3>
+
+      <label class="sr-only">Email address</label>
+      <input type="email" name="email" [(ngModel)]="email" id="inputEmail" class="form-control first-input" placeholder="Email address"
+        required autofocus>
+
+      <div *ngIf="!isSignInActive">
+        <label class="sr-only">Nickname</label>
+        <input type="text" name="nickname" [(ngModel)]="nickname" id="inputNickname" class="form-control" placeholder="Nickname"
+          required>
+      </div>
+
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name="password" [(ngModel)]="password" id="inputPassword" [ngClass]="{'last-input': isSignInActive}"
+        class="form-control" placeholder="Password" required>
+
+      <div *ngIf="!isSignInActive">
+        <label for="inputPasswordConfirmation" class="sr-only">Repeat password</label>
+        <input type="password" name="passwordConfirmation" [(ngModel)]="passwordConfirmation" id="inputPasswordConfirmation" class="form-control last-input"
+          placeholder="Repeat password" required>
+      </div>
+
+      <button class="mt-3 btn btn-lg btn-success btn-block" type="submit">{{ isSignInActive ? 'Sign in' : 'Sign up' }}</button>
+
+      <div *ngIf="isSignInActive">
+        <span>
+          Looking to
+          <button type="button" class="btn btn-link btn-switch" (click)="switchToSignUp()">create an account</button>?
+        </span>
+      </div>
+
+      <div *ngIf="!isSignInActive">
+        <span>
+          Already have an account?
+          <button type="button" class="btn btn-link btn-switch" (click)="switchToSignIn()">Sign in</button>
+        </span>
+      </div>
+
+    </form>
+  </div>
+</div>
