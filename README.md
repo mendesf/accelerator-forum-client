@@ -1,27 +1,16 @@
-# AcceleratorForumClient
+# accelerator-forum-server
+This is the front-end app for VanHack's Accelerator Program.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+## Installing
+First, you have to install Node.js.
 
-## Development server
+[How to install Node.js](https://nodejs.org/en/download/package-manager/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Then run `npm install` to install all the dependencies.
 
-## Code scaffolding
+## Running
+First, clone and install the [back-end](https://github.com/mendesf/accelerator-forum-server).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Then, run `npm run build` to transpile the files.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Lastly, start the server and navigate to `http://localhost:8080/`.
