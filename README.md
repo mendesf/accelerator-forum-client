@@ -1,4 +1,4 @@
-# accelerator-forum-server
+# accelerator-forum-client
 This is the front-end app for VanHack's Accelerator Program.
 
 ## Installing
